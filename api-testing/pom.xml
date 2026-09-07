@@ -20,6 +20,7 @@
         <testng.version>7.10.2</testng.version>
         <jackson.version>2.17.2</jackson.version>
         <allure.version>2.29.0</allure.version>
+        <aspectj.version>1.9.22</aspectj.version>
         <lombok.version>1.18.34</lombok.version>
     </properties>
 
@@ -68,6 +69,14 @@
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- AspectJ — needed by Allure agent at runtime -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -80,9 +89,8 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.22/aspectjweaver-1.9.22.jar"
-                    </argLine>
+                    <!-- Let Maven resolve the jar from the local repo after download -->
+                    <argLine>-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar</argLine>
                 </configuration>
             </plugin>
         </plugins>
