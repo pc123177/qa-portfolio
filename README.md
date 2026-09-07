@@ -1,6 +1,6 @@
 # QA Automation Portfolio
 
-A comprehensive QA automation portfolio demonstrating end-to-end testing capabilities across web, API, and mobile platforms.
+A QA automation portfolio demonstrating end-to-end testing capabilities across web UI and REST API layers.
 
 ## Modules
 
@@ -8,16 +8,13 @@ A comprehensive QA automation portfolio demonstrating end-to-end testing capabil
 |--------|-------|--------|
 | [ui-automation](./ui-automation) | Playwright + TypeScript | Web UI testing |
 | [api-testing](./api-testing) | REST Assured + Java | REST API testing |
-| [mobile-testing](./mobile-testing) | Appium + Java | Android mobile testing |
 
 ## About
 
-Built by **Paulo Matos** — SDET with experience at Meta, specializing in test automation frameworks, CI/CD integration, and quality engineering at scale.
+Built by **Paulo Matos** — SDET with 5+ years of experience in test automation, CI/CD integration, and quality engineering.
 
-- 5+ years in QA Automation
-- Ex-Meta (2023–2025)
 - Certified: Scrum, Six Sigma Yellow Belt, Kobiton Appium, Full-Stack QA
-- Stack: Java, JavaScript/TypeScript, Python, Selenium, Playwright, Appium, RestAssured, Cypress
+- Stack: Java, JavaScript/TypeScript, Selenium, Playwright, REST Assured, Appium, Cypress
 
 ## Architecture
 
@@ -28,31 +25,21 @@ qa-portfolio/
 │   │   ├── pages/        # Page Object classes
 │   │   ├── tests/        # Test specs
 │   │   └── helpers/      # Utilities and fixtures
-│   ├── playwright.config.ts
-│   └── .github/workflows/
+│   └── playwright.config.ts
 │
-├── api-testing/          # REST Assured + Java (Maven)
-│   ├── src/
-│   │   ├── main/java/    # Models and utilities
-│   │   └── test/java/    # Test classes
-│   ├── pom.xml
-│   └── .github/workflows/
-│
-└── mobile-testing/       # Appium + Java (Maven)
+└── api-testing/          # REST Assured + Java (Maven)
     ├── src/
-    │   ├── main/java/    # Page Objects, capabilities
+    │   ├── main/java/    # Models and utilities
     │   └── test/java/    # Test classes
-    ├── pom.xml
-    └── .github/workflows/
+    └── pom.xml
 ```
 
 ## CI/CD
 
 All modules run automatically on every push and pull request via GitHub Actions.
 
-[![UI Tests](https://github.com/YOUR_USERNAME/qa-portfolio/actions/workflows/ui-tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/qa-portfolio/actions)
-[![API Tests](https://github.com/YOUR_USERNAME/qa-portfolio/actions/workflows/api-tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/qa-portfolio/actions)
-[![Mobile Tests](https://github.com/YOUR_USERNAME/qa-portfolio/actions/workflows/mobile-tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/qa-portfolio/actions)
+[![UI Tests](https://github.com/pc123177/qa-portfolio/actions/workflows/ui-tests.yml/badge.svg)](https://github.com/pc123177/qa-portfolio/actions/workflows/ui-tests.yml)
+[![API Tests](https://github.com/pc123177/qa-portfolio/actions/workflows/api-tests.yml/badge.svg)](https://github.com/pc123177/qa-portfolio/actions/workflows/api-tests.yml)
 
 ## Running Locally
 
@@ -62,7 +49,4 @@ cd ui-automation && npm install && npx playwright test
 
 # API
 cd api-testing && mvn test
-
-# Mobile (requires Android emulator + Appium server)
-cd mobile-testing && mvn test
 ```
