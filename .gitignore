@@ -1,0 +1,25 @@
+# Maven
+target/
+*.class
+
+# Node / Playwright
+node_modules/
+dist/
+playwright-report/
+test-results/
+.playwright/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+*.env.local

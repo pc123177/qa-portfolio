@@ -1,0 +1,44 @@
+name: API Tests
+
+on:
+  push:
+    paths:
+      - 'api-testing/**'
+  pull_request:
+    paths:
+      - 'api-testing/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api-testing
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Run tests
+        run: mvn test --no-transfer-progress
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: api-testing/target/allure-results/
+          retention-days: 30
+
+      - name: Upload Surefire report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-report
+          path: api-testing/target/surefire-reports/
+          retention-days: 30

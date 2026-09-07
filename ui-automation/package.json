@@ -1,0 +1,16 @@
+{
+  "name": "ui-automation",
+  "version": "1.0.0",
+  "description": "UI test automation framework using Playwright and TypeScript",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.47.2",
+    "@types/node": "22.5.5",
+    "typescript": "5.6.2"
+  }
+}
